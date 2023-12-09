@@ -1,7 +1,7 @@
 ## TODO
 
 ###### *(08/12/23)*
-- [ ] Create branches: dev, main screen, chat-navigation...
+- [x] Create branches: dev, main screen, chat-navigation...
 
 
 
@@ -12,10 +12,10 @@
 - [ ] Chat navigation
 - [ ] Tools navigation
 #### Avatar component:
-- [ ] Shape
-- [ ] Size
-- [ ] Name
-- [ ] Status
-- [ ] Email
-- [ ] Time / date
+- [x] Shape
+- [x] Size
+- [x] Name
+- [x] Status
+- [x] Email
+- [x] Time / date
 - [ ] ***! Use client fix***
