@@ -1,8 +1,7 @@
-"use client"
+// 'use client'
 
 import Image from "next/image";
 import React, { useState } from "react";
-
 /**
  * 1. Shape
  * 2. Size
@@ -10,15 +9,21 @@ import React, { useState } from "react";
  * 4. Status
  * 5. Email
  * 6. Time / date
- * 
  * ! Use client fix
  */
 
-export default function Avatar() {
-  const [date, setDate] = useState(false);
+type Props = {
+  lastSeenTime: string,
+  status?: string,
+  name?: string,
+  img?: string,
+}
+
+export default function AvatarUI() {
+  const [lastSeenTime, setLastSeenTime] = useState(true);
+
   return (
     <div className="flex items-center w-full h-16">
-
       <div className="flex mr-4">
         <div className="relative">
           <Image
@@ -38,9 +43,8 @@ export default function Avatar() {
           <span className="text-xs text-slate-600">Active</span>
         </div>
 
-
         {
-          date ? (
+          lastSeenTime ? (
             <div className="flex">
             <a href="">Email</a>
             <time>
