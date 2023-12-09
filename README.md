@@ -11,3 +11,11 @@
 - [ ] Main screen (split)
 - [ ] Chat navigation
 - [ ] Tools navigation
+#### Avatar component:
+- [ ] Shape
+- [ ] Size
+- [ ] Name
+- [ ] Status
+- [ ] Email
+- [ ] Time / date
+- [ ] ***! Use client fix***
