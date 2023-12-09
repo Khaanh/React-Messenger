@@ -1,5 +1,5 @@
 import React from "react";
-import MainScreenHeader from "../components/MainScreenHeader";
+import MainScreenHeader from "../../components/MainScreenHeader";
 
 export default function MainScreen() {
   return (

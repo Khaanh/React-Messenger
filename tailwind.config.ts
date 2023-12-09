@@ -13,8 +13,8 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      backgroundColor: {
-        'bg-main-color': 'background-color:(--bg-secondary-color)'
+      gridTemplateColumns: {
+        'layout': '1fr 3fr 1fr'
       }
     },
   },

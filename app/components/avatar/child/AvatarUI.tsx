@@ -20,7 +20,7 @@ type Props = {
 }
 
 export default function AvatarUI() {
-  const [lastSeenTime, setLastSeenTime] = useState(true);
+  const [lastSeenTime, setLastSeenTime] = useState(false);
 
   return (
     <div className="flex items-center w-full h-16">
