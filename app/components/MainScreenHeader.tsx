@@ -1,11 +1,18 @@
-'use client'
+"use client";
 
 import React from "react";
 import AvatarUI from "./avatar/child/AvatarUI";
+import HeaderWidget from "./header-widgets/page";
 
 export default function MainScreenHeader() {
-  return <div>MainScreenHeader 
-    {/* <AvatarLayout/> */}
-    <AvatarUI/>
-  </div>;
+  return (
+    <div className="flex items-center justify-between">
+      <AvatarUI />
+      <div className="flex">
+        <HeaderWidget widget="phone" />
+        <HeaderWidget widget="camera" />
+        <HeaderWidget widget="more" />
+      </div>
+    </div>
+  );
 }
