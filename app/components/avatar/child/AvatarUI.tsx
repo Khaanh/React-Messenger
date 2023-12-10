@@ -32,7 +32,7 @@ export default function AvatarUI() {
             height={38}
             width={38}
           />
-          <i className="block bg-green-500 rounded-full border-2 border-gray-950 w-3 h-3 absolute right-0 bottom-0"></i>
+          <i className="block bg-green-500 rounded-full border-2 border-gray-950 w-3 h-3 absolute right-0 -bottom-1"></i>
         </div>
       </div>
 
@@ -40,7 +40,7 @@ export default function AvatarUI() {
 
         <div className="flex flex-col">
           <span className="text-xl font-medium">Maia</span>
-          <span className="text-xs text-slate-600">Active</span>
+          <span className="text-xs text-zinc-400">Active</span>
         </div>
 
         {

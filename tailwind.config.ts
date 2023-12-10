@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         'primary': 'var(--bg-primary-color)',
-        'secondary': 'var(--bg-secondary-color)'
+        'secondary': 'var(--bg-secondary-color)',
+        'ferra': '#684d4d',
       },
       gridTemplateColumns: {
         'layout': '1fr 3fr 1fr'

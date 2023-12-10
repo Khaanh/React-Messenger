@@ -19,3 +19,5 @@
 - [x] Email
 - [x] Time / date
 - [ ] ***! Use client fix***
+### Main screen container
+- [ ] add plugin Tailwind forms

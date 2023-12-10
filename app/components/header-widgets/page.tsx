@@ -52,7 +52,7 @@ export default function HeaderWidget(props: WidgetProps) {
   }
 
   return (
-    <button className="flex items-center justify-center w-10 h-10 mx-2 rounded-full bg-secondary">
+    <button className="flex items-center justify-center w-10 h-10 mx-2 rounded-full bg-secondary transition hover:bg-zinc-950">
       {widgetElement}
     </button>
   );
