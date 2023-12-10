@@ -2,7 +2,7 @@
 
 import React from "react";
 import AvatarUI from "./avatar/child/AvatarUI";
-import HeaderWidget from "./header-widgets/page";
+import HeaderWidget from "./headerWidgets/page";
 
 export default function MainScreenHeader() {
   return (
