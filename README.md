@@ -21,3 +21,10 @@
 - [ ] ***! Use client fix***
 #### Main screen container
 - [ ] add plugin Tailwind forms
+
+
+
+
+
+### Questions
+1. *Components avatar how to split UI-part and logic-part ?*

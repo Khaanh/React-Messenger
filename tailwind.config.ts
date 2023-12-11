@@ -15,9 +15,14 @@ const config: Config = {
       },
       gridTemplateColumns: {
         'layout': '1fr 3fr 1fr'
+      },
+      height: {
+        'main-calc': 'calc(100vh - var(--headers-h) - var(--inputMessage-h))'
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
 export default config

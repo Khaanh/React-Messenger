@@ -6,6 +6,9 @@
   --foreground-rgb: 0, 0, 0;
   --bg-primary-color: #262626;
   --bg-secondary-color: #1E1E1E;
+  /* heights */
+  --headers-h: 80px;
+  --inputMessage-h: 56px;
 }
 
 @media (prefers-color-scheme: dark) {
