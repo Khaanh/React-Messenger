@@ -1,18 +1,37 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
+enum Status {
+  Active = 'bg-green-500 border-gray-950',
+  Away = 'bg-yellow-500 border-gray-950',
+  Off = 'bg-red-500 border-gray-950',
+  Invisible = 'transparent',
+}
+
 type Props = {
-  lastSeenTime: string;
-  status?: string;
+  lastSeenTime?: string;
+  imgRounded?: string;
+  status?: 'active' | 'away' | 'off' | 'invisible' | null;
   name?: string;
-  img?: string;
+  size?: number;
 };
 
-export default function AvatarLayout() {
-  const [lastSeenTime, setLastSeenTime] = useState<string>("10/10/22");
-  const [status, setStatus] = useState(["active", "away", "off", "invisible"]);
+export default function AvatarLayout(props: Props) {
+  const [lastSeenTime, setLastSeenTime] = useState("10/10/22");
+  const [status, setStatus] = useState(props.status);
   const [name, setName] = useState("");
   const [img, setImg] = useState("");
+  let statusDetect;
+
+  if(status === 'active') {
+    statusDetect = Status.Active
+  } else if (status === 'away') {
+    statusDetect = Status.Away
+  } else if (status === 'off') {
+    statusDetect = Status.Off
+  } else if (status === 'invisible') {
+    statusDetect = Status.Invisible
+  }
 
   return (
     <>
@@ -20,12 +39,12 @@ export default function AvatarLayout() {
         <div className="flex mr-4">
           <div className="relative">
             <Image
-              src={"/img/avatar.png"}
+              src={"/img/code-A.png"}
               alt="user avatar"
               height={38}
               width={38}
             />
-            <i className="block bg-green-500 rounded-full border-2 border-gray-950 w-3 h-3 absolute right-0 -bottom-1"></i>
+            <i className={`block rounded-full border-2 border-transparent w-3 h-3 absolute right-0 -bottom-1 ${statusDetect ? statusDetect : ''}`}></i>
           </div>
         </div>
 
@@ -39,7 +58,7 @@ export default function AvatarLayout() {
             <div className="flex">
               <a href="">Email</a>
               <time>
-                Sun Jul 09 2023 17:55:27 GMT+0200 (Central European Summer Time)
+                17:55
               </time>
             </div>
           ) : null}
