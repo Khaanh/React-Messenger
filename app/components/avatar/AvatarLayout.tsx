@@ -1,36 +1,54 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-enum Status {
-  Active = 'bg-green-500 border-gray-950',
-  Away = 'bg-yellow-500 border-gray-950',
-  Off = 'bg-red-500 border-gray-950',
-  Invisible = 'transparent',
+enum AvatarStatus {
+  Active = "bg-green-500 border-gray-950",
+  Away = "bg-yellow-500 border-gray-950",
+  Off = "bg-red-500 border-gray-950",
+  Invisible = "transparent border-transparent",
+}
+
+enum AvatarSize {
+  sm = "12",
+  md = "10",
 }
 
 type Props = {
-  lastSeenTime?: string;
-  imgRounded?: string;
-  status?: 'active' | 'away' | 'off' | 'invisible' | null;
-  name?: string;
-  size?: number;
+  lastSeenTime?: string | null;
+  imgRounded: "full" | "lg";
+  status: "active" | "away" | "off" | "invisible";
+  name: string;
+  size: "sm" | "md";
+  email: true | false
 };
 
-export default function AvatarLayout(props: Props) {
-  const [lastSeenTime, setLastSeenTime] = useState("10/10/22");
-  const [status, setStatus] = useState(props.status);
-  const [name, setName] = useState("");
-  const [img, setImg] = useState("");
+export default function AvatarLayout({
+  lastSeenTime,
+  imgRounded,
+  status,
+  name,
+  size,
+  email,
+}: Props) {
+  // const [lastSeenTime, setLastSeenTime] = useState("10/10/22");
+  // const [img, setImg] = useState("");
   let statusDetect;
+  let setAvatarSize;
 
-  if(status === 'active') {
-    statusDetect = Status.Active
-  } else if (status === 'away') {
-    statusDetect = Status.Away
-  } else if (status === 'off') {
-    statusDetect = Status.Off
-  } else if (status === 'invisible') {
-    statusDetect = Status.Invisible
+  if (status === "active") {
+    statusDetect = AvatarStatus.Active;
+  } else if (status === "away") {
+    statusDetect = AvatarStatus.Away;
+  } else if (status === "off") {
+    statusDetect = AvatarStatus.Off;
+  } else if (status === "invisible") {
+    statusDetect = AvatarStatus.Invisible;
+  }
+
+  if (size == "sm") {
+    setAvatarSize = AvatarSize.md
+  } else {
+    setAvatarSize = AvatarSize.sm
   }
 
   return (
@@ -38,30 +56,35 @@ export default function AvatarLayout(props: Props) {
       <div className="flex items-center">
         <div className="flex mr-4">
           <div className="relative">
-            <Image
-              src={"/img/code-A.png"}
-              alt="user avatar"
-              height={38}
-              width={38}
-            />
-            <i className={`block rounded-full border-2 border-transparent w-3 h-3 absolute right-0 -bottom-1 ${statusDetect ? statusDetect : ''}`}></i>
+            <div className={`overflow-hidden rounded-${imgRounded} w-${setAvatarSize} h-${setAvatarSize}`}>
+              <Image className="w-auto"
+                src={"/img/avatar.jpeg"}
+                alt="user avatar"
+                height={38}
+                width={38}
+              />
+            </div>
+            <i className={`block rounded-full border-2 w-3 h-3 absolute right-0 -bottom-1 ${statusDetect}`}></i>
           </div>
         </div>
 
         <div className="flex">
           <div className="flex flex-col">
-            <span className="text-xl font-medium">Maia</span>
+            <span className="text-xl font-medium">{name}</span>
             <span className="text-xs text-zinc-400">Active</span>
           </div>
 
-          {lastSeenTime ? (
-            <div className="flex">
-              <a href="">Email</a>
-              <time>
-                17:55
-              </time>
+          {/* Email display */}
+          {
+            email && <a href="">Email</a>
+          }
+
+          {/* last visit time display */}
+          {
+          lastSeenTime && <div className="flex">
+              <time>17:55</time>
             </div>
-          ) : null}
+          }
         </div>
       </div>
     </>
