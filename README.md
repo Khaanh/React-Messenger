@@ -1,4 +1,4 @@
-#### [Design](https://www.figma.com/file/SnDqgeVMqdBXEPQ5vQt7Pd/Messager-Dashboard-design.-(Community)?type=design&node-id=2-2&mode=design&t=6c5dTPxBDUCmEa4w-0)
+#### [Mockup Design](https://www.figma.com/file/SnDqgeVMqdBXEPQ5vQt7Pd/Messager-Dashboard-design.-(Community)?type=design&node-id=2-2&mode=design&t=6c5dTPxBDUCmEa4w-0)
 ## TODO
 
 ###### *(08/12/23)*
