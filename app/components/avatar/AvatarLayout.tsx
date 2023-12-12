@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 enum AvatarStatus {
@@ -9,8 +9,8 @@ enum AvatarStatus {
 }
 
 enum AvatarSize {
-  sm = "12",
-  md = "10",
+  md = "12",
+  sm = "10",
 }
 
 type Props = {
@@ -30,8 +30,6 @@ export default function AvatarLayout({
   size,
   email,
 }: Props) {
-  // const [lastSeenTime, setLastSeenTime] = useState("10/10/22");
-  // const [img, setImg] = useState("");
   let statusDetect;
   let setAvatarSize;
 
@@ -46,9 +44,9 @@ export default function AvatarLayout({
   }
 
   if (size == "sm") {
-    setAvatarSize = AvatarSize.md
-  } else {
     setAvatarSize = AvatarSize.sm
+  } else if( size == "md") {
+    setAvatarSize = AvatarSize.md
   }
 
   return (
@@ -70,7 +68,7 @@ export default function AvatarLayout({
 
         <div className="flex">
           <div className="flex flex-col">
-            <span className="text-xl font-medium">{name}</span>
+            <span className="text-xl font-medium mr-2">{name}</span>
             <span className="text-xs text-zinc-400">Active</span>
           </div>
 
@@ -82,7 +80,7 @@ export default function AvatarLayout({
           {/* last visit time display */}
           {
           lastSeenTime && <div className="flex">
-              <time>17:55</time>
+              <time className="text-tiny">17:55</time>
             </div>
           }
         </div>

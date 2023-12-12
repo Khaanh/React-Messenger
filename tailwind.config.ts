@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'tiny': '8px'
+      },
       colors: {
         'primary': 'var(--bg-primary-color)',
         'secondary': 'var(--bg-secondary-color)',

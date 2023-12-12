@@ -4,13 +4,16 @@ import BtnMicro from "./btnMicro/btnMicro";
 import BtnAttach from "./btnAttach/btnAttach";
 import BtnSend from "./btnSend/btnSend";
 import InputMessage from "./inputMessage/inputMessage";
+import ContainerMessage from "./containerMessage/containerMessage";
 
 export default function MainScreenContainer() {
   return (
     <div className="w-full">
       <div>
         <div className="h-main-calc">
-          <div className="h-full w-full bg-secondary overflow-y-auto"></div>
+          <div className="h-full w-full bg-secondary overflow-y-auto p-4">
+            <ContainerMessage/>
+          </div>
         </div>
         <form className="relative mt-5 mb-3 mr-8 ml-4">
           <InputMessage />
