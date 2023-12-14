@@ -6,12 +6,12 @@ enum AvatarStatus {
   Away = "bg-yellow-500 border-gray-950",
   Off = "bg-red-500 border-gray-950",
   Invisible = "transparent border-transparent",
-}
+};
 
 enum AvatarSize {
-  md = "12",
   sm = "10",
-}
+  md = "11",
+};
 
 type Props = {
   lastSeenTime?: string | null;
@@ -45,7 +45,7 @@ export default function AvatarLayout({
 
   if (size == "sm") {
     setAvatarSize = AvatarSize.sm
-  } else if( size == "md") {
+  } else if( size === "md") {
     setAvatarSize = AvatarSize.md
   }
 

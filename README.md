@@ -24,7 +24,8 @@
 
 
 
-
+### Bugs
+1. *Avatar size="md" doesn't work*
 
 ### Questions
 1. *Components avatar how to split UI-part and logic-part ?*
