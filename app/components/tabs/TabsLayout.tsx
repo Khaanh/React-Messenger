@@ -1,9 +1,15 @@
 "use client";
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import AvatarLayout from "../avatar/AvatarLayout";
 
 export default function TabsLayout() {
-  const [tabs, setTabs] = useState(["Chat", "Groups"]);
+  const [tabs, setTabs] = useState<string[]>(["Chat", "Groups"]);
+  const [tabsActive, setTabsActive] = useState<boolean>(true)
+
+  const handleSetTab= (e: any)=> {
+    console.log(e);
+    
+  } 
 
   return (
     <div>
@@ -11,12 +17,11 @@ export default function TabsLayout() {
         {tabs.map((tabEl) => {
           return (
             <li key={tabEl} className="flex bg-secondary h-9 w-36 rounded-lg transition hover:bg-primary">
-              <a
-                className="flex items-center justify-center w-full h-full text-base text-slate-50"
-                href="#"
-              >
+              <button
+                className="flex items-center justify-center w-full h-full text-base text-slate-50" 
+                onClick={handleSetTab}>
                 {tabEl}
-              </a>
+              </button>
             </li>
           );
         })}
